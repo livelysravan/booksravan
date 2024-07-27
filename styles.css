@@ -1,125 +1,136 @@
 body {
-     font-family: Arial, sans-serif;
-     background-color: #f7f7f7;
-     color: #333;
-     display: flex;
-     flex-direction: column;
-     align-items: center;
-     justify-content: center;
-     height: 100vh;
-     margin: 0;
-     overflow: hidden;
- }
- 
- #particles-js {
-     position: absolute;
-     width: 100%;
-     height: 100%;
-     z-index: -1;
- }
- 
- header {
-     margin-bottom: 20px;
- }
- 
- h1 {
-     font-size: 2em;
-     color: #007BFF;
-     text-align: center;
- }
- 
- h1 span {
-     color: #FF1493;
-     font-weight: bold;
-     text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
- }
- 
- main {
-     text-align: center;
- }
- 
- button {
-     background-color: #007BFF;
-     color: white;
-     border: none;
-     padding: 15px 30px;
-     font-size: 1em;
-     cursor: pointer;
-     border-radius: 5px;
- }
- 
- button:hover {
-     background-color: #0056b3;
- }
- 
- #bookingFormContainer {
-     margin-top: 20px;
- }
- 
- .hidden {
-     display: none;
- }
- 
- form {
-     background-color: white;
-     padding: 20px;
-     border-radius: 5px;
-     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
- }
- 
- label {
-     display: block;
-     margin: 10px 0 5px;
- }
- 
- input, textarea {
-     width: calc(100% - 22px);
-     padding: 10px;
-     margin-bottom: 10px;
-     border: 1px solid #ccc;
-     border-radius: 5px;
- }
- 
- footer {
-     position: fixed;
-     bottom: 10px;
-     text-align: center;
-     width: 100%;
- }
- 
- .flyer-container {
-     position: absolute;
-     top: 0;
-     left: 0;
-     width: 100%;
-     height: 100%;
-     overflow: hidden;
-     pointer-events: none;
- }
- 
- .flyer {
-     position: absolute;
-     background-color: rgba(255, 255, 255, 0.8);
-     padding: 10px;
-     border-radius: 5px;
-     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-     animation: float 10s infinite;
- }
- 
- .flyer:nth-child(1) { top: 10%; left: 20%; animation-duration: 12s; }
- .flyer:nth-child(2) { top: 20%; left: 40%; animation-duration: 14s; }
- .flyer:nth-child(3) { top: 30%; left: 60%; animation-duration: 16s; }
- .flyer:nth-child(4) { top: 40%; left: 80%; animation-duration: 18s; }
- .flyer:nth-child(5) { top: 50%; left: 10%; animation-duration: 20s; }
- .flyer:nth-child(6) { top: 60%; left: 30%; animation-duration: 22s; }
- .flyer:nth-child(7) { top: 70%; left: 50%; animation-duration: 24s; }
- .flyer:nth-child(8) { top: 80%; left: 70%; animation-duration: 26s; }
- .flyer:nth-child(9) { top: 90%; left: 20%; animation-duration: 28s; }
- .flyer:nth-child(10) { top: 10%; left: 60%; animation-duration: 30s; }
- 
- @keyframes float {
-     0% { transform: translateY(0); }
-     50% { transform: translateY(-20px); }
-     100% { transform: translateY(0); }
- }
- 
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+}
+
+header {
+    margin-bottom: 20px;
+    z-index: 1;
+    position: relative;
+}
+
+h1 {
+    font-size: 2em;
+    color: #007BFF;
+    text-align: center;
+}
+
+h1 span {
+    color: #FF1493;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+main {
+    text-align: center;
+    z-index: 1;
+    position: relative;
+}
+
+button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    z-index: 1;
+    position: relative;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#bookingFormContainer {
+    margin-top: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    position: relative;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input, textarea {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+footer {
+    position: fixed;
+    bottom: 10px;
+    text-align: center;
+    width: 100%;
+    z-index: 1;
+}
+
+.flyer-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: -1; /* Ensure flyers are behind content */
+}
+
+.flyer {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    animation: float 10s infinite;
+    z-index: -1; /* Ensure flyers are behind content */
+}
+
+.flyer:nth-child(1) { top: 10%; left: 20%; animation-duration: 12s; }
+.flyer:nth-child(2) { top: 20%; left: 40%; animation-duration: 14s; }
+.flyer:nth-child(3) { top: 30%; left: 60%; animation-duration: 16s; }
+.flyer:nth-child(4) { top: 40%; left: 80%; animation-duration: 18s; }
+.flyer:nth-child(5) { top: 50%; left: 10%; animation-duration: 20s; }
+.flyer:nth-child(6) { top: 60%; left: 30%; animation-duration: 22s; }
+.flyer:nth-child(7) { top: 70%; left: 50%; animation-duration: 24s; }
+.flyer:nth-child(8) { top: 80%; left: 70%; animation-duration: 26s; }
+.flyer:nth-child(9) { top: 90%; left: 20%; animation-duration: 28s; }
+.flyer:nth-child(10) { top: 10%; left: 60%; animation-duration: 30s; }
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
